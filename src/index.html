@@ -1,15 +1,96 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Кисневий відбілювач (перкарбонат) для компаній та домашнього використання. Доступні різні варіанти фасування.">
+    <title>Перкарбонат для миючих засобів</title>
+    <link rel="stylesheet" href="./style.css" />
+
   </head>
   <body>
-    <h1>Example title</h1>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
-  </body>
+    <header>
+        <div class="logo"><a href="index.html">Перкарбонат</a></div>
+        <nav>
+            <li><a href="products.html">Продукти</a></li>
+            <li><a href="about.html">Про нас</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+        </nav>
+        <div class="cart-icon">
+            <a href="cart.html" class="cart-link">🛒 Кошик</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <h1>Кисневий відбілювач для чистоти</h1>
+            <p>Екологічно чистий перкарбонат для дому та бізнесу. Ідеальний вибір для чистки та відбілювання.</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section-padding">
+        <div class="container">
+          <h2 class="section-title">Наші продукти</h2>
+          <div class="product-list">
+            <div class="product">
+              <img src="./images/perc_basic.jfif" alt="Перкарбонат 5 кг">
+              <h3>Перкарбонат 5 кг</h3>
+              <p>Ціна: 550 грн</p>
+              <button class="add-to-cart" data-product="Перкарбонат 5 кг" data-price="550">Додати в кошик</button>
+            </div>
+            <div class="product">
+              <img src="./images/perc_basic.jfif" alt="Перкарбонат 25 кг">
+              <h3>Перкарбонат 25 кг</h3>
+              <p>Ціна: 2200 грн</p>
+              <button class="add-to-cart" data-product="Перкарбонат 25 кг" data-price="2200">Додати в кошик</button>
+            </div>
+            <div class="product">
+              <img src="./images/perc_basic.jfif" alt="Перкарбонат 100 кг">
+              <h3>Перкарбонат 100 кг</h3>
+              <p>Ціна: 8500 грн</p>
+              <button class="add-to-cart" data-product="Перкарбонат 100 кг" data-price="8500">Додати в кошик</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+    <!-- About Us -->
+    <section id="about" class="section-padding">
+        <div class="container">
+          <h2 class="section-title">Про нас</h2>
+          <p>Наша компанія почала свою діяльність з метою забезпечення екологічно чистими продуктами для побуту. Перкарбонат, який ми продаємо, є гіпоалергенним і безпечним для використання в домі з малюками та тваринами. Ми прагнемо створювати продукцію, яка не лише ефективна, а й безпечна для довкілля. Вся наша продукція пройшла сертифікацію та відповідає стандартам якості.</p>
+          <p>Ми віримо в те, що чистота повинна бути безпечною та натуральною. Саме тому наш кисневий порошок виготовлений з турботою про вашу сім'ю та навколишнє середовище.</p>
+        </div>
+      </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+          <h2 class="section-title">Контакти</h2>
+          <p>Зв’яжіться з нами для отримання додаткової інформації про продукти або щодо питань співпраці. Ми завжди раді відповісти на ваші запитання.</p>
+          <form action="/submit-form" method="post">
+            <label for="name">Ваше ім'я:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Ваш Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Повідомлення:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Надіслати</button>
+          </form>
+        </div>
+      </section>
+      
+
+    <footer>
+        <p>© 2024 Перкарбонат для миючих засобів. Всі права захищені.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>

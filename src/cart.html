@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кошик</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><a href="index.html">Перкарбонат</a></div>
+        <nav>
+            <li><a href="products.html">Продукти</a></li>
+            <li><a href="about.html">Про нас</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+        </nav>
+        <div class="cart-icon">
+            <a href="cart.html" class="cart-link">🛒 Кошик</a>
+        </div>
+    </header>
+
+    <!-- Cart Page -->
+    <section id="cart-page">
+        <div class="container">
+            <h2>Ваш кошик</h2>
+            <ul id="cart-items"></ul>
+            <p>Загальна сума: <span id="total-price">0</span> грн</p>
+            <button id="checkout">Оформити замовлення</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Перкарбонат для миючих засобів. Всі права захищені.</p>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+</html>
