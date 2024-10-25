@@ -36,6 +36,7 @@ nav ul {
 
 nav ul li {
     display: inline;
+    list-style: none;
 }
 
 nav ul li a {
