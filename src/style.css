@@ -262,6 +262,39 @@ body {
     font-size: 18px;
   }
   
+  .our-benefits {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+  }
+
+  .our-benefits-img{
+    margin: 30px;
+  }
+
+  .container.about{
+    display: flex;
+    justify-content: space-between;
+  }
+  .about-item-right{
+    background-color: #87ceeb;
+    border-radius: 50% 20% / 10% 40%;
+
+    padding: 20px;
+    margin: 20px;
+  }
+  .about-item-left{
+    background-color: #daeb87;
+    border-radius: 50% 20% / 10% 40%;
+
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .about-list{
+    list-style: none;
+  }
+
   form {
     display: flex;
     flex-direction: column;
