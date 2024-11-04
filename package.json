@@ -4,7 +4,7 @@
   "description": "",
   "homepage": "https://RevenkoSerhii.github.io/Percarbonate",
   "scripts": {
-    "start": "parcel src/*.html",
+    "start": "parcel index.html",
     "build": "parcel build src/*.html --public-url /Percarbonate/"
   },
   "repository": {
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/goitacademy/parcel-project-template.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Serhii Revenko <revenko83@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/goitacademy/parcel-project-template/issues"

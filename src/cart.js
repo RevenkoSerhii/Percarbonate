@@ -11,11 +11,34 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         // Додаємо товари в кошик
         let totalPrice = 0;
+        let totalQuantity = 1;
         cart.forEach(item => {
-            const itemElement = document.createElement('div');
+            const itemElement = document.createElement('tr');
             itemElement.classList.add('cart-item');
-            itemElement.innerText = `${item.name} - ${item.price} грн`;
-            cartContainer.appendChild(itemElement);
+
+            const itemName = document.createElement('td');
+            itemName.classList.add('cart-item');
+            itemName.innerText = `${item.name}`;
+
+            const itemPrice = document.createElement("td");
+            itemPrice.classList.add('cart-item-cell');
+            itemPrice.innerText = `${item.price} грн`;
+
+            const itemQuantity = document.createElement("td");
+            itemQuantity.classList.add('cart-item-quantity');
+            itemQuantity.innerText = `${totalQuantity} шт`;           
+            
+            const itemTotalPrice = document.createElement("td");
+            itemTotalPrice.classList.add('cart-item-quantity');
+            itemTotalPrice.innerText = `${totalQuantity*item.price} шт`; 
+
+            cartContainer.append(itemElement);
+            itemElement.append(itemName);
+            itemElement.append(itemQuantity);
+            itemElement.append(itemPrice);
+            itemElement.append(itemTotalPrice);
+            
+
             totalPrice += item.price;
         });
 

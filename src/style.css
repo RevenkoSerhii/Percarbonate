@@ -11,20 +11,33 @@ body {
 }
 
 header {
-    background-color: #87ceeb;
+    /* background-color: #87ceeb; */
     color: white;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
+    width: 100%;
 
 }
 
 
-.logo {
+.logo a {
     font-size: 24px;
-    color: white;
+    color: rgb(191, 96, 12);
     text-decoration: none;
+    font-weight: bold;
+    
+}
+.logo{
+    background-color: rgba(128, 128, 128, 0.658);
+    width: 140px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50% 20% / 10% 40%;
 }
 
 nav ul {
@@ -77,12 +90,34 @@ section {
     text-align: center;
 }
 
+#hero{
+    background-image: url("../src/images/everdrop-gmbh-9LpR7Rw81Wc-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    padding-top: 10%;
+}
+
 #products .product-list {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
+#cart-items{
+    list-style: none;
+
+}
+
+#cart-items tr {
+    background: #fcc84365;
+    color: rgb(87, 87, 87);
+    margin: 5px;
+  }
+
+/* #cart-items:nth-child(even) {
+    background-color: #f2f2f2;
+} */
 .product {
     background-color: white;
     border: 1px solid #ddd;
@@ -101,7 +136,7 @@ button {
 }
 
 button:hover {
-    background-color: #4682b4;
+    background-color: #ccb93c;
 }
 
 footer {
@@ -156,7 +191,7 @@ h1 {
 }
 
 button.add-to-cart {
-    background-color: #007bff;
+    background-color: hwb(45 8% 38% / 0.989);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -167,7 +202,7 @@ button.add-to-cart {
 }
 
 button.add-to-cart:hover {
-    background-color: #0056b3;
+    background-color: #ccb93c;
 }
 
 .product:hover {
@@ -183,7 +218,10 @@ body {
   
   .container {
     width: 80%;
-    margin: 0 auto;
+    margin: 50px auto;
+  }
+  .container h2 {
+    margin: 10px auto;
   }
   
   .section-padding {
@@ -192,7 +230,7 @@ body {
   
   .section-title {
     font-size: 28px;
-    color: #12735c;
+    color: rgb(73, 73, 73);
     text-align: center;
     margin-bottom: 40px;
   }
@@ -217,14 +255,14 @@ body {
   
   button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #ccb93c;
     color: white;
     border: none;
     cursor: pointer;
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: #ccb93c;
   }
   
   .product-list {
@@ -273,7 +311,7 @@ body {
     margin-bottom: 20px;
     padding-bottom: 40px; /* Відступ для кнопки */
     transition: max-height 0.3s ease; /* Анімація для плавного розкриття */
-    background-color: #e6f2ea;
+    background-color: #f2f1e6;
     border-radius: 20px;
 }
 
@@ -294,6 +332,5 @@ body {
     max-height: none; /* При розгортанні знімаємо обмеження */
     padding-bottom: 10px; /* Прибрано місце для кнопки */
 }
-
 
   
