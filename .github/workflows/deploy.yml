@@ -16,16 +16,22 @@ jobs:
         with:
           path: |
             node_modules
-            .parcel-cache  # Очищення кешу Parcel (або будь-яких інших директорій, які ви використовуєте)
-          key: ${{ runner.os }}-node-modules-clear-${{ github.run_id }}  # Унікальний ключ для оновлення кешу
+            .parcel-cache
+          key: ${{ runner.os }}-node-modules-clear-${{ github.run_id }}
 
       - name: Install and Build 🔧
         run: |
           npm ci
           npm run build
 
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           branch: gh-pages
           folder: dist
+          token: ${{ secrets.GITHUB_TOKEN }}
