@@ -646,6 +646,7 @@ body {
   bottom: 100%;
   right: 10px;
   display: none;
+  list-style: none;
 }
 .connect {
   background-color: #a77e58;
