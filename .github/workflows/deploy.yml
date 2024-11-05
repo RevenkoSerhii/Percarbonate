@@ -29,6 +29,11 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+      - name: Clear Git Cache
+        run: |
+          git rm -r --cached .
+          git clean -fdx
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
