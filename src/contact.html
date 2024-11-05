@@ -12,9 +12,11 @@
     <header>
         <div class="logo"><a href="../index.html">Oxy_Clean</a></div>
         <nav>
-            <li><a href="products.html">Продукти</a></li>
-            <li><a href="about.html">Про нас</a></li>
-            <li><a href="contact.html">Контакти</a></li>
+            <ul>
+                <li class="item-nav"><a href="./src/products.html">Продукти</a></li>
+                <li class="item-nav"><a href="./src/about.html">Про нас</a></li>
+                <li class="item-nav"><a href="./src/contact.html">Контакти</a></li>
+              </ul>
         </nav>
         <div class="cart-icon">
             <a href="cart.html" class="cart-link">🛒 Кошик</a>
@@ -55,9 +57,104 @@
         </div>
     </section>
 
-    <footer>
-        <p>© 2024 Перкарбонат для миючих засобів. Всі права захищені.</p>
-    </footer>
+    <footer class="section-black footer">
+        <div class="container flex">
+        <div class="left-part_footer">
+            <form action="/" class="modal-form_footer">
+                <label class="form-main-text_footer">
+                    Зворотній зв'язок</label>
+                <label class="modal-form-field_footer">
+                    <input type="text" name="user-name" class="modal-form-input-field_footer" 
+                    placeholder="Ім'я*">
+                </label>
+                <label class="modal-form-field">
+                    <input type="tel" name="user-phone" class="modal-form-input-field_footer" 
+                    placeholder="Телефон*">
+                </label>                    
+                <label class="modal-form-field_footer">
+                    <textarea class="user-message_footer" name="user-message" 
+                    placeholder="Коментар"></textarea>
+                </label>
+                <button type="submit" class="modal-form-btn_footer">Надіслати</button>
+            </form>
+        </div>
+        
+        <div class="right-part_footer">
+            <ul class="social-network footer">
+                <li class="social-network items">
+                    <a class="fb" href="#"  target="_blank" aria-label="facebook-link">
+                        <svg class="fb footer" width="48px" height="48px">
+                            <use href="/src/images/sprite.svg#facebook_white"></use>
+                             </svg>
+                    </a>
+                </li>
+                <li class="social-network items">
+                    <a class="insta" href="#/"  target="_blank" aria-label="instegram-link">
+                        <svg class="insta footer" width="48px" height="48px">
+                            <use href="./src/images/sprite.svg#insta_white"></use>
+                             </svg>  
+                    </a>
+                </li>
+                <li class="social-network items">
+                    <a class="telega" href="https://t.me/Steeltechnologies"  target="_blank" aria-label="telegram-link">
+                        <svg class="telega footer" width="48px" height="48px">
+                            <use href="./src/images/sprite.svg#telega_white"></use>
+                             </svg> 
+                    </a>
+                    </li>
+             </ul>
+
+            <address>
+                <ul class="contacts-link-set">
+                    <li class="contacts-link-item">
+                        <span class="contacts-link-type">Телефон:</span> <a class="contacts-link" href="tel:+380962882100" target="_blank"> +38 (096) 288-21-00</a>
+                    </li>
+                    <li class="contacts-link-item">
+                        <span class="contacts-link-type">Email:</span> <a class="contacts-link" href="mailto:steeltech.ds@gmail.com" target="_blank"> steeltech.ds@gmail.com</a>
+                    </li>
+                    <li class="contacts-link-item">
+                        <span class="contacts-link-type">Адреса виробництва:<a class="contacts-link" href="https://goo.gl/maps/rK6BqTWxukULVyYCA" target="_blank">  м. Київ, вул. Дубровицька, 28</a></span>
+                    </li>
+                    <li class="contacts-link-item">
+                        <p class="contacts-link-type">Графік роботи</p>
+                        <p class="contacts-link-type">Пн-Пт: 9:00-20:00</p>
+                        <p class="contacts-link-type">Сб-Нд: 10:00-17:00</p>
+                    </li>
+               </ul>
+            </address>
+        </div>    
+            <div class="under_menu">
+                <svg class="connect">
+                    <use class="connect_icon" href="./src/images/sprite.svg#message"></use>
+                </svg>
+                <ul class="menu_massengers">
+                    <li class="massengers_items">
+                        <a href="tel:+380962882100">
+                            <svg width="50px" height="50px">
+                                <use href="./src/images/sprite.svg#phone_blue"></use>
+                            </svg>
+                        </a>   
+                    </li>
+                    <li class="massengers_items">
+                        <a href="mailto:steeltech.ds@gmail.com">
+                            <svg width="50px" height="50px">
+                                <use href="./src/images/sprite.svg#message_blue"></use>
+                            </svg>
+                        </a> 
+                    </li>
+                    <li class="massengers_items">
+                        <a href="# target="_blank>
+                            <svg width="50px" height="50px">
+                                <use href="./src/images/sprite.svg#telega_blue"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>  
+        <p class="footer-end">© 2024 Перкарбонат для миючих засобів. Всі права захищені.</p>
+        </footer>
 
     <script src="script.js"></script>
 </body>
