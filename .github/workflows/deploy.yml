@@ -11,6 +11,14 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
 
+      - name: Clear Cache 🧹
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            .parcel-cache  # Очищення кешу Parcel (або будь-яких інших директорій, які ви використовуєте)
+          key: ${{ runner.os }}-node-modules-clear-${{ github.run_id }}  # Унікальний ключ для оновлення кешу
+
       - name: Install and Build 🔧
         run: |
           npm ci
