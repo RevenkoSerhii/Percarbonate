@@ -63,17 +63,31 @@ document.addEventListener('DOMContentLoaded', function() {
             itemTotalPrice.classList.add('cart-item');
             itemTotalPrice.innerText = `${totalQuantity*item.price} грн`; 
 
+            const quantityIncreaseButton = document.createElement("button");
+            const quantityDecreaseButton = document.createElement("button");
+            quantityIncreaseButton.textContent = ("+");
+            quantityDecreaseButton.textContent = ("-");
+
             cartContainer.append(itemElement);
             itemElement.append(itemName);
-            itemElement.append(itemQuantity);
+            itemElement.append(itemQuantity, quantityIncreaseButton, quantityDecreaseButton);
             itemElement.append(itemPrice);
             itemElement.append(itemTotalPrice);
             
 
             totalPrice += item.price;
+
+            quantityIncreaseButton.addEventListener("click", (e)=>{
+                if(e){
+                    itemQuantity+=1;
+                    console.log(quantityIncreaseButton)
+                }
+            })
         });
 
         // Відображаємо загальну ціну
         totalPriceElement.textContent = `${totalPrice} грн`;
+
+        
     }
 });
