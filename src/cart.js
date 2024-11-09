@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         // Додаємо товари в кошик
         let totalPrice = 0;
-        let totalQuantity = 1;
+
 
         const TableHeader = document.createElement("thead");
         TableHeader.classList.add('cart-thead');
@@ -50,26 +50,27 @@ document.addEventListener('DOMContentLoaded', function() {
         TableHeaderRow.append(itemElHeaderTotalPrice);
 
         cart.forEach(item => {
-
+            let totalQuantity = 1;
 
             const itemElement = document.createElement('tr');
             itemElement.classList.add('cart-item');
 
             const itemName = document.createElement('td');
-            itemName.classList.add('cart-item');
+            itemName.classList.add('itemName');
             itemName.innerText = `${item.name}`;
 
             const itemPrice = document.createElement("td");
-            itemPrice.classList.add('cart-item');
+            itemPrice.classList.add('itemPrice');
             itemPrice.innerText = `${item.price} грн`;
 
             let itemQuantity = document.createElement("td");
-            itemQuantity.classList.add('cart-item');
+            itemQuantity.classList.add('itemQuantity');
             itemQuantity.innerText = `${totalQuantity}`;           
             
             const itemTotalPrice = document.createElement("td");
-            itemTotalPrice.classList.add('cart-item');
+            itemTotalPrice.classList.add('itemTotalPrice');
             itemTotalPrice.innerText = `${totalQuantity*item.price} грн`; 
+            console.log(totalQuantity)
 
             let quantityIncreaseButton = document.createElement("button");
             quantityIncreaseButton.classList.add('IncreaseButton');
@@ -83,23 +84,32 @@ document.addEventListener('DOMContentLoaded', function() {
             cartContainer.append(itemElement);
             itemElement.append(itemName, quantityDecreaseButton,itemQuantity, quantityIncreaseButton, itemPrice, itemTotalPrice);
 
-            totalPrice += item.price;
+            
             itemElement.addEventListener("click", (e)=>{
                 if(e.target.nodeName !== "BUTTON"){
                     return
                 }
-                if(e.target.classList.value = "+"){
+                else if(e.target.classList.contains('IncreaseButton')){
                     itemQuantity.innerText = totalQuantity+=1;
-                    console.log(e.target.classList)
+                    itemTotalPrice.innerText = `${totalQuantity*item.price} грн`; 
+                    console.log(totalQuantity)
+                }
+                else if(e.target.classList.contains('DecreaseButton')){
+                    itemQuantity.innerText = totalQuantity-=1;
+                    itemTotalPrice.innerText = `${totalQuantity*item.price} грн`; 
+                    console.log(totalQuantity)
                 }
             })
-            
+            totalPrice += item.quantity * item.price;
+            totalPriceElement.textContent = `${totalPrice} грн`;  
         });
 
 
 
         // Відображаємо загальну ціну
-        totalPriceElement.textContent = `${totalPrice} грн`;  
+        
+
+        
 
 
     }
