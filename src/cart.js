@@ -26,10 +26,18 @@ document.addEventListener('DOMContentLoaded', function() {
         itemElHeaderName.innerText = `Назва продукту`;
         TableHeaderRow.append(itemElHeaderName);
 
+        const itemElHeaderDecrease = document.createElement("th");
+        itemElHeaderDecrease.classList.add('cart-item-header');
+        TableHeaderRow.append(itemElHeaderDecrease);
+
         const itemElHeaderQuantity = document.createElement("th");
         itemElHeaderQuantity.classList.add('cart-item-header');
-        itemElHeaderQuantity.innerText = `Кількість`;
+        itemElHeaderQuantity.innerText = `Кількість, шт`;
+
         TableHeaderRow.append(itemElHeaderQuantity);
+        const itemElHeaderIncrease = document.createElement("th");
+        itemElHeaderIncrease.classList.add('cart-item-header');
+        TableHeaderRow.append(itemElHeaderIncrease);
 
         const itemElHeaderPrice = document.createElement("th");
         itemElHeaderPrice.classList.add('cart-item-header');
@@ -55,39 +63,45 @@ document.addEventListener('DOMContentLoaded', function() {
             itemPrice.classList.add('cart-item');
             itemPrice.innerText = `${item.price} грн`;
 
-            const itemQuantity = document.createElement("td");
+            let itemQuantity = document.createElement("td");
             itemQuantity.classList.add('cart-item');
-            itemQuantity.innerText = `${totalQuantity} шт`;           
+            itemQuantity.innerText = `${totalQuantity}`;           
             
             const itemTotalPrice = document.createElement("td");
             itemTotalPrice.classList.add('cart-item');
             itemTotalPrice.innerText = `${totalQuantity*item.price} грн`; 
 
-            const quantityIncreaseButton = document.createElement("button");
-            const quantityDecreaseButton = document.createElement("button");
-            quantityIncreaseButton.textContent = ("+");
-            quantityDecreaseButton.textContent = ("-");
+            let quantityIncreaseButton = document.createElement("button");
+            quantityIncreaseButton.classList.add('IncreaseButton');
+            quantityIncreaseButton.innerText = ("+");
+
+            let quantityDecreaseButton = document.createElement("button");
+            quantityDecreaseButton.classList.add('DecreaseButton');
+            quantityDecreaseButton.innerText = ("-");
+
 
             cartContainer.append(itemElement);
-            itemElement.append(itemName);
-            itemElement.append(itemQuantity, quantityIncreaseButton, quantityDecreaseButton);
-            itemElement.append(itemPrice);
-            itemElement.append(itemTotalPrice);
-            
+            itemElement.append(itemName, quantityDecreaseButton,itemQuantity, quantityIncreaseButton, itemPrice, itemTotalPrice);
 
             totalPrice += item.price;
-
-            quantityIncreaseButton.addEventListener("click", (e)=>{
-                if(e){
-                    itemQuantity+=1;
-                    console.log(quantityIncreaseButton)
+            itemElement.addEventListener("click", (e)=>{
+                if(e.target.nodeName !== "BUTTON"){
+                    return
+                }
+                if(e.target.classList.value = "+"){
+                    itemQuantity.innerText = totalQuantity+=1;
+                    console.log(e.target.classList)
                 }
             })
+            
         });
 
-        // Відображаємо загальну ціну
-        totalPriceElement.textContent = `${totalPrice} грн`;
 
-        
+
+        // Відображаємо загальну ціну
+        totalPriceElement.textContent = `${totalPrice} грн`;  
+
+
     }
+ 
 });
