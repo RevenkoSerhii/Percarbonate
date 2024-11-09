@@ -282,9 +282,6 @@ body {
     margin: 10px auto;
   }
   
-  .section-padding {
-    padding: 50px 0;
-  }
   
   .section-title {
     font-size: 28px;
@@ -316,14 +313,18 @@ body {
     background-color: #ebc687;
     border-radius: 50% 20% / 10% 40%;
 
-    padding: 20px;
-    margin: 20px;
+    padding: 5px;
+
   }
   .about-item-left{
     background-color:  palegoldenrod;
     border-radius: 50% 20% / 10% 40%;
 
     padding: 20px;
+    margin: 20px;
+  }
+
+  .description{
     margin: 20px;
   }
 
