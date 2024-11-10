@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         TableHeaderRow.classList.add('cart-thead-row');
         TableHeader.append(TableHeaderRow);
 
-        const headers = ['Назва продукту', '', 'Кількість, шт', '', 'Ціна за шт', 'Всього, грн'];
+        const headers = ['Назва продукту', '', 'Кількість, шт', '', 'Ціна за шт', 'Всього, грн', 'Видалити'];
         headers.forEach(header => {
             const th = document.createElement("th");
             th.classList.add('cart-item-header');
@@ -51,7 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
             quantityDecreaseButton.classList.add('DecreaseButton');
             quantityDecreaseButton.innerText = "-";
 
-            itemElement.append(itemName, quantityDecreaseButton, itemQuantity, quantityIncreaseButton, itemPrice, itemTotalPrice);
+            const removeButton = document.createElement("button");
+            removeButton.classList.add('RemoteButton');
+            removeButton.innerText = "Х";
+
+            itemElement.append(itemName, quantityDecreaseButton, itemQuantity, quantityIncreaseButton, itemPrice, itemTotalPrice, removeButton);
             cartContainer.append(itemElement);
 
             // Функція для оновлення загальної суми
@@ -80,6 +84,20 @@ document.addEventListener('DOMContentLoaded', function() {
                     updateTotalPrice();
                 }
             });
+
+            removeButton.addEventListener("click", () => {
+                cart.splice(index, 1);  // Видаляємо елемент за індексом
+                localStorage.setItem('cart', JSON.stringify(cart));  // Оновлюємо LocalStorage
+                itemElement.remove();  // Видаляємо HTML елемент товару
+                updateTotalPrice();  // Оновлюємо загальну суму
+            
+                // Перевіряємо, чи кошик порожній після видалення товару
+                if (cart.length === 0) {
+                    cartContainer.innerHTML = '<p>Ваш кошик порожній.</p>';
+                    totalPriceElement.textContent = `0 грн`;
+                }
+            });
+            
         });
     }
 });

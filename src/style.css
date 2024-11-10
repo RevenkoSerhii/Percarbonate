@@ -84,7 +84,7 @@ nav {
 .logo:focus,
 .logo,
 .logo:visited {
-    background: palegoldenrod;
+    background: #9e7c143c;
     color: black;
     padding: 5px;
     border-radius: 50% 20% / 10% 40%;
@@ -93,7 +93,7 @@ nav {
   .item-nav a:hover,
   .cart-link:hover,
   .logo:hover {
-    background: orange;
+    background: #ccb93c;
     padding: 5px;
     border-radius: 50% 20% / 10% 40%;
   }
@@ -184,14 +184,14 @@ section {
     width: 200px;
 }
 
-button {
+/* button {
     background-color: #87ceeb;
     color: white;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
+} */
 
 button:hover {
     background-color: #ccb93c;
@@ -276,15 +276,15 @@ body {
   
   .container {
     width: 80%;
-    margin: 50px auto;
+    margin: 45px auto;
   }
   .container h2 {
-    margin: 10px auto;
+    margin: 20px auto 40px;
   }
   
   
   .section-title {
-    font-size: 28px;
+    font-size: 22px;
     color: rgb(73, 73, 73);
     text-align: center;
     margin-bottom: 40px;
@@ -312,14 +312,13 @@ body {
   .about-item-right{
     background-color: #ebc687;
     border-radius: 50% 20% / 10% 40%;
-
-    padding: 5px;
+    padding: 20px;
+    margin: 20px;
 
   }
   .about-item-left{
     background-color:  palegoldenrod;
     border-radius: 50% 20% / 10% 40%;
-
     padding: 20px;
     margin: 20px;
   }
@@ -343,14 +342,23 @@ body {
     margin-bottom: 20px;
     padding: 10px;
     font-size: 16px;
+    color: white;
   }
   
   button {
     padding: 10px 20px;
-    background-color: #ccb93c;
+    background-color:#9e7c14fc;
     color: white;
     border: none;
     cursor: pointer;
+  }
+
+  .IncreaseButton,
+  .DecreaseButton,
+  .RemoteButton {
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 20%;
   }
   
   button:hover {
@@ -375,42 +383,45 @@ body {
     margin-bottom: 15px;
   }
   
-  .add-to-cart {
+  /* .add-to-cart {
     background-color: #28a745;
   }
   
   .add-to-cart:hover {
     background-color: #218838;
-  }
+  } */
   a {
     text-decoration: none;
   }
   .section-using {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Відстань між елементами */
-    justify-content: space-between;
+    gap: 20px; 
+    justify-content: space-between; */
+    padding: 0px 60px;
     
-
 }
 
 .section-using .container {
-    flex: 1 1 calc(33.33% - 20px); /* Три елементи в ряд */
-    max-height: 200px; /* Максимальна висота для однакового розміру */
+  display: flex;
+  flex-direction: column;
+    /* flex: 1 1 calc(33.33% - 20px); Три елементи в ряд */
+    max-height: 80px; /* Максимальна висота для однакового розміру */
     overflow: hidden; /* Приховує зайвий контент */
     position: relative;
     box-sizing: border-box;
-    margin-bottom: 20px;
-    padding-bottom: 40px; /* Відступ для кнопки */
+    /* margin-bottom: 20px;
+    padding-bottom: 60px;  */
     transition: max-height 0.3s ease; /* Анімація для плавного розкриття */
-    background-color: #f2f1e6;
+    background-color: #a77e5839;
     border-radius: 20px;
+    width: 100%;
 }
 
 .show-more-btn {
     display: block; /* Забезпечте відображення */
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #717171;
@@ -422,7 +433,16 @@ body {
 
 .section-using .container.expanded {
     max-height: none; /* При розгортанні знімаємо обмеження */
-    padding-bottom: 10px; /* Прибрано місце для кнопки */
+    padding-bottom: 35px; /* Прибрано місце для кнопки */
+}
+
+.section-using .container.expanded h2{
+  margin: 10px;
+}
+
+.section-gray{
+  background-color: #a77e5839;
+  /* padding: 20px; */
 }
 
 /* ====================футер =========================*/
